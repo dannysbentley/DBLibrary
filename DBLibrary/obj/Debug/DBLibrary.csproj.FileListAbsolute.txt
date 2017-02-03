@@ -1,0 +1,5 @@
+F:\00-PROGRAMMING SOM\DBLibrary\DBLibrary\bin\Debug\DBLibrary.dll
+F:\00-PROGRAMMING SOM\DBLibrary\DBLibrary\bin\Debug\DBLibrary.pdb
+F:\00-PROGRAMMING SOM\DBLibrary\DBLibrary\obj\Debug\DBLibrary.csprojResolveAssemblyReference.cache
+F:\00-PROGRAMMING SOM\DBLibrary\DBLibrary\obj\Debug\DBLibrary.dll
+F:\00-PROGRAMMING SOM\DBLibrary\DBLibrary\obj\Debug\DBLibrary.pdb
