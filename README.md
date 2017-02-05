@@ -1,6 +1,6 @@
 # Project Name
 Collection of useful methods which will help develop faster addin and software.  
-The methods as of now are mostly used for Revit development, however, in the future I will add common methods which I can use with addins. 
+The methods as of now are mostly used for Revit development, however, in the future I will add common methods. 
 
 ## Installation
 Copy .dll file and .addin to the [Revit Add-Ins folder](http://help.autodesk.com/view/RVT/2015/ENU/?guid=GUID-4FFDB03E-6936-417C-9772-8FC258A261F7).
