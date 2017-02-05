@@ -1,5 +1,5 @@
 # Project Name
-Collection of useful methods which will help me and maybe others develop faster.  
+Collection of useful methods which will help develop faster addin and software.  
 The methods as of now are mostly used for Revit development, however, in the future I will add common methods which I can use with addins. 
 
 ## Installation
