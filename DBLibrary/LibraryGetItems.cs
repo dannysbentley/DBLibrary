@@ -161,7 +161,7 @@ namespace DBLibrary
             }
             return List_levels;
         }
-
+        
         /// <summary>
         /// Get all floors and slabs from project. 
         /// </summary>
@@ -191,6 +191,42 @@ namespace DBLibrary
             return GetParameterValue(wsparam);
         }
 
+        /// <summary>
+        /// Get all view from a project. 
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <returns></returns>
+        public List<View> GetAllViews(Document doc)
+        {
+            FilteredElementCollector viewcollector = new FilteredElementCollector(doc);
+            viewcollector.OfClass(typeof(View));
+            ICollection<Element> List_ViewElements = viewcollector.ToElements();
+            List<View> List_Views = new List<View>();
+            foreach (View v in List_ViewElements)
+            {
+                List_Views.Add(v);
+            }
+            return List_Views;
+        }
+
+        /// <summary>
+        /// Get all viewports in project.
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <returns></returns>
+        public List<Viewport> GetAllViewport(Document doc)
+        {
+            var filtercollector = new FilteredElementCollector(doc)
+                .OfCategory(BuiltInCategory.OST_Viewports)
+                .WhereElementIsNotElementType().ToElements();
+            List<Viewport> List_Viewrports = new List<Viewport>();
+            foreach (Element e in filtercollector)
+            {
+                Viewport vp = e as Viewport;
+                List_Viewrports.Add(vp);
+            }
+            return List_Viewrports;
+        }
         /// <summary>
         /// Find an element in the model by name 
         /// </summary>
