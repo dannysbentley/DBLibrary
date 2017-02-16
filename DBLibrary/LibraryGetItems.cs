@@ -24,9 +24,9 @@ namespace DBLibrary
         /// <summary>
         /// Get family instance from document using the Build In Category
         /// </summary>
-        /// <param name="doc"></param>
-        /// <param name="category">Document, BuiltInCategory</param>
-        /// <returns>FamilyInstance</returns>
+        /// <param name="doc">Document</param>
+        /// <param name="category">BuiltInCategory</param>
+        /// <returns>List FamilyInstance</returns>
         public List<FamilyInstance> GetFamilyInstance(Document doc, BuiltInCategory category)
         {
             List<FamilyInstance> List_FamilyInstance = new List<FamilyInstance>();
@@ -63,10 +63,10 @@ namespace DBLibrary
         /// <summary>
         /// Get family Symbols from a name. 
         /// </summary>
-        /// <param name="doc"></param>
-        /// <param name="familyName"></param>
-        /// <param name="category"></param>
-        /// <returns></returns>
+        /// <param name="doc">Document</param>
+        /// <param name="familyName">String</param>
+        /// <param name="category">BuiltInCategory</param>
+        /// <returns>FamilySymbol</returns>
         public FamilySymbol GetFamilySymbol(Document doc, String familyName, BuiltInCategory category)
         {
 
@@ -81,10 +81,10 @@ namespace DBLibrary
         /// <summary>
         /// Get a list of Family Symbols. 
         /// </summary>
-        /// <param name="doc"></param>
-        /// <param name="familyName"></param>
-        /// <param name="category"></param>
-        /// <returns></returns>
+        /// <param name="doc">Document</param>
+        /// <param name="familyName">String</param>
+        /// <param name="category">BuiltInCategory</param>
+        /// <returns>List FamilySymbol</returns>
         public List<FamilySymbol> GetFamilySymbols(Document doc, String familyName, BuiltInCategory category)
         {
 
@@ -97,8 +97,8 @@ namespace DBLibrary
         /// <summary>
         /// Get Element from document using the Build In Category
         /// </summary>
-        /// <param name="doc"></param>
-        /// <param name="category">Document, BuiltInCategory</param>
+        /// <param name="doc">Document</param>
+        /// <param name="category">BuiltInCategory</param>
         /// <returns>Element</returns>
         public List<Element> GetFamilyElement(Document doc, BuiltInCategory category)
         {
@@ -135,8 +135,8 @@ namespace DBLibrary
         /// <summary>
         /// Select and element from the Revit model. 
         /// </summary>
-        /// <param name="uidoc"></param>
-        /// <param name="doc"></param>
+        /// <param name="uidoc">UIDocument</param>
+        /// <param name="doc">Document</param>
         /// <returns>Element</returns>
         public Element SelectElement(UIDocument uidoc, Document doc)
         {
@@ -165,8 +165,8 @@ namespace DBLibrary
         /// <summary>
         /// Get all floors and slabs from project. 
         /// </summary>
-        /// <param name="doc"></param>
-        /// <returns>List of floors</returns>
+        /// <param name="doc">Document</param>
+        /// <returns>List Floors</returns>
         public List<Floor> GetAllFloors(Document doc)
         {
             FilteredElementCollector collector = new FilteredElementCollector(doc);
@@ -182,10 +182,10 @@ namespace DBLibrary
         /// <summary>
         /// Get workset from element 
         /// </summary>
-        /// <param name="doc"></param>
-        /// <param name="e"></param>
-        /// <returns>workset name</returns>
-        public String GetWorkset(Document doc, Element e)
+        /// <param name="doc">Document</param>
+        /// <param name="e">Element</param>
+        /// <returns>string</returns>
+        public string GetWorkset(Document doc, Element e)
         {
             Parameter wsparam = e.get_Parameter(BuiltInParameter.ELEM_PARTITION_PARAM);
             return GetParameterValue(wsparam);
@@ -194,8 +194,8 @@ namespace DBLibrary
         /// <summary>
         /// Get all view from a project. 
         /// </summary>
-        /// <param name="doc"></param>
-        /// <returns></returns>
+        /// <param name="doc">Document</param>
+        /// <returns>List View</returns>
         public List<View> GetAllViews(Document doc)
         {
             FilteredElementCollector viewcollector = new FilteredElementCollector(doc);
@@ -212,8 +212,8 @@ namespace DBLibrary
         /// <summary>
         /// Get all viewports in project.
         /// </summary>
-        /// <param name="doc"></param>
-        /// <returns></returns>
+        /// <param name="doc">Document</param>
+        /// <returns>List Viewport</returns>
         public List<Viewport> GetAllViewport(Document doc)
         {
             var filtercollector = new FilteredElementCollector(doc)
@@ -230,9 +230,9 @@ namespace DBLibrary
         /// <summary>
         /// Find an element in the model by name 
         /// </summary>
-        /// <param name="doc"></param>
-        /// <param name="targetType"></param>
-        /// <param name="targetName"></param>
+        /// <param name="doc">Document</param>
+        /// <param name="targetType">Type</param>
+        /// <param name="targetName">string</param>
         /// <returns>element of searched by name</returns>
         public Element FindElementByName(Document doc, Type targetType, string targetName)
         {
@@ -245,8 +245,8 @@ namespace DBLibrary
         /// <summary>
         /// Get all walls
         /// </summary>
-        /// <param name="doc"></param>
-        /// <returns>Walls</returns>
+        /// <param name="doc">Document</param>
+        /// <returns>List Walls</returns>
         public List<Wall> GetWalls(Document doc)
         {
             FilteredElementCollector collector = new FilteredElementCollector(doc);

@@ -38,8 +38,8 @@ namespace DBLibrary
         /// <summary>
         /// Convert Feet to MM
         /// </summary>
-        /// <param name="length"></param>
-        /// <returns></returns>
+        /// <param name="length">double</param>
+        /// <returns>double</returns>
         public double FootToMm(double length)
         {
             return length * _convertFootToMm;
@@ -48,8 +48,8 @@ namespace DBLibrary
         /// <summary>
         /// Convert MM to Feet
         /// </summary>
-        /// <param name="length"></param>
-        /// <returns></returns>
+        /// <param name="length">double</param>
+        /// <returns>double</returns>
         public double MmToFoot(double length)
         {
             return length / _convertFootToMm;

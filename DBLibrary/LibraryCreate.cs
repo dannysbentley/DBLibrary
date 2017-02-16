@@ -13,8 +13,20 @@ using Autodesk.Revit.DB.Structure;
 
 namespace DBLibrary
 {
+    
     public class LibraryCreate
     {
+        ///  Author:   Danny Bentley
+        ///  Date  :   02/16/2017
+        ///  Objective : My Revit Library. Reusable Code. 
+        ///  Create items.  
+
+        /// <summary>
+        /// Create a detail line
+        /// </summary>
+        /// <param name="doc">Document</param>
+        /// <param name="p1">XYZ</param>
+        /// <param name="p2">XYZ</param>
         public void CreateDetailLine(Document doc ,XYZ p1, XYZ p2)
         {
             using (Transaction t = new Transaction(doc, "Create detail Line"))
@@ -25,7 +37,12 @@ namespace DBLibrary
                 t.Commit();
             }
         }
-
+        
+        /// <summary>
+        /// Create a detail line from curve
+        /// </summary>
+        /// <param name="doc">Document</param>
+        /// <param name="line">Line</param>
         public void CreateDetailLine(Document doc, Line line)
         {
             using (Transaction t = new Transaction(doc, "Create detail Line"))
