@@ -63,5 +63,11 @@ namespace DBLibrary
             return d;
         }
 
+        public bool BoundingBoxXyzContains(BoundingBoxXYZ bb, XYZ p)
+        {
+            return 0 < Compare(bb.Min, p)
+              && 0 < Compare(p, bb.Max);
+        }
+
     }
 }
