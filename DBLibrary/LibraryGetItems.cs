@@ -311,6 +311,41 @@ namespace DBLibrary
                     return "";
             }
         }
+
+        /// <summary>
+        /// get filled regions in entire project
+        /// </summary>
+        /// <param name="Document">Paramter</param>
+        /// <returns>List Filled Regions</returns>
+        public List<FilledRegion> getFillRegions(Document doc)
+        {
+            List<FilledRegion> List_FilledRegions = new List<FilledRegion>();
+            FilteredElementCollector filledRegions = new FilteredElementCollector(doc)
+            .OfClass(typeof(FilledRegion));
+            //Add Filled Region to a list. 
+            foreach(FiledRegion fr in filledRegions)
+            {
+                List_FilledRegions.Add(fr);
+            }
+            return List_FilledRegions;
+        }
+
+        /// <summary>
+        /// get filled regions in active view
+        /// </summary>
+        /// <param name="Document">Paramter</param>
+        /// <returns>List Filled Regions</returns>
+        public List<FilledRegion> getActiveViewFiledRegions(Document doc)
+        {
+            List<FilledRegion> List_FilledRegions = new List<FilledRegion>();
+            FilteredElementCollector filledRegions = new FilteredElementCollector(doc, doc.ActiveView.Id).OfClass(typeof(FilledRegion));
+            //Add Filled Region to a list. 
+            foreach(FiledRegion fr in filledRegions)
+            {
+                List_FilledRegions.Add(fr);
+            }
+            return List_FilledRegions;
+        }
         #endregion
     }
 }
