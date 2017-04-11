@@ -313,6 +313,7 @@ namespace DBLibrary
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// get filled regions in entire project
         /// </summary>
         /// <param name="Document">Paramter</param>
@@ -346,6 +347,22 @@ namespace DBLibrary
             }
             return List_FilledRegions;
         }
+=======
+        /// get viewtemplate id by user name
+        /// </summary>
+        /// <param name="parameter">Parameter</param>
+        /// <returns>Object</returns>
+        /// Parameter comment = dc.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS);
+        /// 
+        public View GetViewTemplate(Document doc, string name)
+        {
+            View viewTemplate = (from v in new FilteredElementCollector(doc).OfClass(typeof(View)).Cast<View>()
+                                 where v.IsTemplate == true && v.Name == name
+                                 select v).First();
+            return viewTemplate;
+        }
+
+>>>>>>> origin/master
         #endregion
     }
 }
